@@ -1,6 +1,5 @@
 package com.joaquinalan.rotationtest.view;
 
-import android.app.Activity;
 import android.content.Context;
 
 /**

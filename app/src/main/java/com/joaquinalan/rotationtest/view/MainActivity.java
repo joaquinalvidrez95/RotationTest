@@ -1,13 +1,13 @@
-package com.joaquinalan.rotationtest;
+package com.joaquinalan.rotationtest.view;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.joaquinalan.rotationtest.R;
 import com.joaquinalan.rotationtest.presenter.MainPresenter;
 import com.joaquinalan.rotationtest.presenter.MainPresenterImpl;
-import com.joaquinalan.rotationtest.view.MainView;
 
 public class MainActivity extends AppCompatActivity implements MainView {
     private TextView mTextViewAxisX;

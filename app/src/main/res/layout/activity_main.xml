@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.joaquinalan.rotationtest.MainActivity">
+    tools:context="com.joaquinalan.rotationtest.view.MainActivity">
 
     <TextView
         android:id="@+id/textview_main_axisx"
