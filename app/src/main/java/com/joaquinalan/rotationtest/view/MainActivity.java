@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
     private TextView mTextViewAxisX;
     private TextView mTextViewAxisY;
     private TextView mTextViewAxisZ;
+    private TextView mTextViewRobotState;
+    private TextView mTextViewSteeringWheelState;
 
     private MainPresenter mMainPresenter;
 
@@ -23,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
         mTextViewAxisX = (TextView) findViewById(R.id.textview_main_axisx);
         mTextViewAxisY = (TextView) findViewById(R.id.textview_main_axisy);
+        mTextViewAxisZ = (TextView) findViewById(R.id.textview_main_axisz);
+        mTextViewRobotState = (TextView) findViewById(R.id.textview_main_robot_state);
+        mTextViewSteeringWheelState = (TextView) findViewById(R.id.textview_main_steering_wheel_state);
         mTextViewAxisZ = (TextView) findViewById(R.id.textview_main_axisz);
 
         mMainPresenter = new MainPresenterImpl(this);
@@ -60,6 +65,16 @@ public class MainActivity extends AppCompatActivity implements MainView {
     @Override
     public void displayAngleZ(String angle) {
         mTextViewAxisZ.setText(angle);
+    }
+
+    @Override
+    public void displayRobotState(String robotState) {
+        mTextViewRobotState.setText(robotState);
+    }
+
+    @Override
+    public void displaySteeringWheelState(String steeringWheelState) {
+        mTextViewSteeringWheelState.setText(steeringWheelState);
     }
 
     @Override

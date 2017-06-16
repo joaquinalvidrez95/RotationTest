@@ -13,5 +13,9 @@ public interface MainView {
 
     void displayAngleZ(String angle);
 
+    void displayRobotState(String robotState);
+
+    void displaySteeringWheelState(String steeringWheelState);
+
     Context getContext();
 }

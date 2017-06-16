@@ -34,6 +34,11 @@ public class MainPresenterImpl implements MainPresenter {
         mMainView.displayAngleX("Axis X: " + (int) (mOrientationAngles[1] * 57.3));
         mMainView.displayAngleY("Axis Y: " + (int) (mOrientationAngles[2] * 57.3));
         mMainView.displayAngleZ("Axis -Z: " + (int) (mOrientationAngles[0] * 57.3));
+
+        SteeringWheel steeringWheel = new SteeringWheel(mOrientationAngles);
+        mMainView.displaySteeringWheelState(String.valueOf(steeringWheel.getSteeringWheelState()));
+        Robot robot = new Robot(steeringWheel.getSteeringWheelState());
+        mMainView.displayRobotState(robot.getRobotState());
     }
 
     @Override
