@@ -1,4 +1,4 @@
-package com.joaquinalan.rotationtest.presenter;
+package com.joaquinalan.rotationtest.model;
 
 /**
  * Created by joaquinalan on 16/06/2017.

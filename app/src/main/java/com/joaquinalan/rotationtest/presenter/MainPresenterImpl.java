@@ -4,6 +4,8 @@ import android.content.Context;
 
 import com.joaquinalan.rotationtest.interactor.MainInteractor;
 import com.joaquinalan.rotationtest.interactor.MainInteractorImpl;
+import com.joaquinalan.rotationtest.model.Robot;
+import com.joaquinalan.rotationtest.model.SteeringWheel;
 import com.joaquinalan.rotationtest.view.MainView;
 
 /**
