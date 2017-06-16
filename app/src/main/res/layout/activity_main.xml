@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.joaquinalan.rotationtest.MainActivity">
+
+    <TextView
+        android:id="@+id/textview_main_axisx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Axis X:"
+        android:textSize="@dimen/main_textsize" />
+
+    <TextView
+        android:id="@+id/textview_main_axisy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Axis Y: "
+        android:textSize="@dimen/main_textsize" />
+
+    <TextView
+        android:id="@+id/textview_main_axisz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Axis Z: "
+        android:textSize="@dimen/main_textsize" />
+
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/button_main_displayorientation"-->
+        <!--android:text="Display Orientation" />-->
+
+</LinearLayout>
