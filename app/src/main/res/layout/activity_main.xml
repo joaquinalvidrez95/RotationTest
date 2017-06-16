@@ -30,6 +30,22 @@
         android:text="Axis Z: "
         android:textSize="@dimen/main_textsize" />
 
+    <TextView
+        android:id="@+id/textview_steering_wheel_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="@dimen/main_textsize" />
+
+    <TextView
+        android:id="@+id/textview_robot_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Forward"
+        android:textSize="@dimen/main_textsize" />
+
     <!--<Button-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
