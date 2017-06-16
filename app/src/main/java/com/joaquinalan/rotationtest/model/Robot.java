@@ -25,22 +25,31 @@ public class Robot {
         switch (mSteeringWheelState) {
             case ROBOT_BACKWARD_RIGHT:
                 mRobotState = "Robot moving backward and right";
+                break;
             case ROBOT_BACKWARD:
                 mRobotState = "Robot moving backward";
+                break;
             case ROBOT_BACKWARD_LEFT:
                 mRobotState = "Robot moving backward and left";
+                break;
             case ROBOT_TURN_RIGHT:
                 mRobotState = "Robot moving turning right";
+                break;
             case ROBOT_STOP:
                 mRobotState = "Robot stopped";
+                break;
             case ROBOT_TURN_LEFT:
                 mRobotState = "Robot turning left";
+                break;
             case ROBOT_FORWARD_RIGHT:
                 mRobotState = "Robot moving forward and right";
+                break;
             case ROBOT_FORWARD:
                 mRobotState = "Robot moving forward";
+                break;
             case ROBOT_FORWARD_LEFT:
                 mRobotState = "Robot moving forward and left";
+                break;
         }
         return mRobotState;
     }

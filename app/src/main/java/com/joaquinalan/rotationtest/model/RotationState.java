@@ -1,7 +1,5 @@
 package com.joaquinalan.rotationtest.model;
 
-import com.joaquinalan.rotationtest.RangeTester;
-
 /**
  * Created by joaquinalan on 16/06/2017.
  */
@@ -17,7 +15,6 @@ public class RotationState implements MotionState {
     private final double FINAL_LEFT = 90.00;
 
     private int mRotationState;
-
     private double mAxisXAngle;
 
     public RotationState(double axisXAngle) {

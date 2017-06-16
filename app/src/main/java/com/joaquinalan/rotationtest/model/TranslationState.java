@@ -1,7 +1,5 @@
 package com.joaquinalan.rotationtest.model;
 
-import com.joaquinalan.rotationtest.RangeTester;
-
 /**
  * Created by joaquinalan on 16/06/2017.
  */
