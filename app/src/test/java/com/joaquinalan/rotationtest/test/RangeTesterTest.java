@@ -1,6 +1,6 @@
 package com.joaquinalan.rotationtest.test;
 
-import com.joaquinalan.rotationtest.model.RangeTester;
+import com.joaquinalan.rotationtest.model.steeringwheel.RangeTester;
 
 import org.junit.Test;
 

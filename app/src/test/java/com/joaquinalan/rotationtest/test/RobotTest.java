@@ -1,6 +1,6 @@
 package com.joaquinalan.rotationtest.test;
 
-import com.joaquinalan.rotationtest.model.Robot;
+import com.joaquinalan.rotationtest.model.steeringwheel.Robot;
 
 import org.junit.Test;
 

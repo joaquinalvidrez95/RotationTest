@@ -1,50 +1,53 @@
 package com.joaquinalan.rotationtest.presenter;
 
-import android.content.Context;
-
-import com.joaquinalan.rotationtest.interactor.MainInteractor;
-import com.joaquinalan.rotationtest.interactor.MainInteractorImpl;
-import com.joaquinalan.rotationtest.model.Robot;
-import com.joaquinalan.rotationtest.model.SteeringWheel;
+import com.joaquinalan.rotationtest.interactor.AngleSensorService;
+import com.joaquinalan.rotationtest.model.steeringwheel.CalculatorSteeringWheelState;
+import com.joaquinalan.rotationtest.model.steeringwheel.ObservableSensor;
+import com.joaquinalan.rotationtest.model.steeringwheel.Robot;
+import com.joaquinalan.rotationtest.model.steeringwheel.SensorObserver;
 import com.joaquinalan.rotationtest.view.MainView;
 
 /**
  * Created by joaquinalan on 16/06/2017.
  */
 
-public class MainPresenterImpl implements MainPresenter {
+public class MainPresenterImpl implements MainPresenter, SensorObserver {
     private MainView mMainView;
-    private MainInteractor mMainInteractor;
+    private ObservableSensor mObservableSensor;
 
     public MainPresenterImpl(MainView mainView) {
+        mObservableSensor = new AngleSensorService();
         this.mMainView = mainView;
-        mMainInteractor = new MainInteractorImpl(this);
     }
 
     @Override
     public void onResume() {
-        mMainInteractor.start();
     }
 
     @Override
-    public Context getContext() {
-        return mMainView.getContext();
+    public void onButtonStartClicked() {
+        mMainView.startSensorService();
+        mObservableSensor.registerObserver(this);
     }
 
     @Override
-    public void onSensorChanged(float[] mOrientationAngles) {
-        mMainView.displayAngleX("Axis X: " + (int) (mOrientationAngles[1] * 57.3));
-        mMainView.displayAngleY("Axis Y: " + (int) (mOrientationAngles[2] * 57.3));
-        mMainView.displayAngleZ("Axis -Z: " + (int) (mOrientationAngles[0] * 57.3));
-
-        SteeringWheel steeringWheel = new SteeringWheel(mOrientationAngles);
-        mMainView.displaySteeringWheelState(String.valueOf(steeringWheel.getSteeringWheelState()));
-        Robot robot = new Robot(steeringWheel.getSteeringWheelState());
-        mMainView.displayRobotState(robot.getRobotState());
+    public void onButtonStopClicked() {
+        mMainView.stopSensorService();
+        //mObservableSensor.removeObserver(this);
     }
 
     @Override
     public void onPause() {
-        mMainInteractor.stop();
+    }
+
+    @Override
+    public void onAngleChanged(float[] orientationAngles) {
+        mMainView.displayAngleX("Axis X: " + (int) (orientationAngles[1] * 57.3));
+        mMainView.displayAngleY("Axis Y: " + (int) (orientationAngles[2] * 57.3));
+        mMainView.displayAngleZ("Axis -Z: " + (int) (orientationAngles[0] * 57.3));
+
+        mMainView.displaySteeringWheelState(String.valueOf(CalculatorSteeringWheelState.calculateSteeringWheelState(orientationAngles)));
+        Robot robot = new Robot(CalculatorSteeringWheelState.calculateSteeringWheelState(orientationAngles));
+        mMainView.displayRobotState(robot.getRobotState());
     }
 }

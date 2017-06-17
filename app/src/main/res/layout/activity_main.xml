@@ -6,6 +6,18 @@
     android:orientation="vertical"
     tools:context="com.joaquinalan.rotationtest.view.MainActivity">
 
+    <Button
+        android:id="@+id/button_main_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start" />
+
+    <Button
+        android:id="@+id/button_main_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop" />
+
     <TextView
         android:id="@+id/textview_main_axisx"
         android:layout_width="match_parent"
@@ -47,9 +59,9 @@
         android:textSize="@dimen/main_textsize" />
 
     <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/button_main_displayorientation"-->
-        <!--android:text="Display Orientation" />-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/button_main_displayorientation"-->
+    <!--android:text="Display Orientation" />-->
 
 </LinearLayout>

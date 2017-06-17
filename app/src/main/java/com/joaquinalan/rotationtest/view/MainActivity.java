@@ -1,21 +1,25 @@
 package com.joaquinalan.rotationtest.view;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.joaquinalan.rotationtest.R;
+import com.joaquinalan.rotationtest.interactor.AngleSensorService;
 import com.joaquinalan.rotationtest.presenter.MainPresenter;
 import com.joaquinalan.rotationtest.presenter.MainPresenterImpl;
 
-public class MainActivity extends AppCompatActivity implements MainView {
+public class MainActivity extends AppCompatActivity implements MainView, View.OnClickListener {
     private TextView mTextViewAxisX;
     private TextView mTextViewAxisY;
     private TextView mTextViewAxisZ;
     private TextView mTextViewRobotState;
     private TextView mTextViewSteeringWheelState;
-
+    private Button mButtonStart;
+    private Button mButtonStop;
     private MainPresenter mMainPresenter;
 
     @Override
@@ -29,6 +33,12 @@ public class MainActivity extends AppCompatActivity implements MainView {
         mTextViewRobotState = (TextView) findViewById(R.id.textview_main_robot_state);
         mTextViewSteeringWheelState = (TextView) findViewById(R.id.textview_main_steering_wheel_state);
         mTextViewAxisZ = (TextView) findViewById(R.id.textview_main_axisz);
+
+        mButtonStart = (Button) findViewById(R.id.button_main_start);
+        mButtonStop = (Button) findViewById(R.id.button_main_stop);
+
+        mButtonStart.setOnClickListener(this);
+        mButtonStop.setOnClickListener(this);
 
         mMainPresenter = new MainPresenterImpl(this);
     }
@@ -78,7 +88,24 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     @Override
-    public Context getContext() {
-        return getApplicationContext();
+    public void startSensorService() {
+        startService(new Intent(this, AngleSensorService.class));
+    }
+
+    @Override
+    public void stopSensorService() {
+        stopService(new Intent(this, AngleSensorService.class));
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_main_start:
+                mMainPresenter.onButtonStartClicked();
+                break;
+            case R.id.button_main_stop:
+                mMainPresenter.onButtonStopClicked();
+                break;
+        }
     }
 }

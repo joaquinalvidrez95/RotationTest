@@ -17,5 +17,7 @@ public interface MainView {
 
     void displaySteeringWheelState(String steeringWheelState);
 
-    Context getContext();
+    void startSensorService();
+
+    void stopSensorService();
 }

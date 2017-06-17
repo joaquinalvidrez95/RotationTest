@@ -1,7 +1,7 @@
 package com.joaquinalan.rotationtest.test;
 
-import com.joaquinalan.rotationtest.model.MotionState;
-import com.joaquinalan.rotationtest.model.TranslationState;
+import com.joaquinalan.rotationtest.model.steeringwheel.MotionState;
+import com.joaquinalan.rotationtest.model.steeringwheel.TranslationState;
 
 import org.junit.Test;
 

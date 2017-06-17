@@ -1,4 +1,4 @@
-package com.joaquinalan.rotationtest.model;
+package com.joaquinalan.rotationtest.model.steeringwheel;
 
 /**
  * Created by joaquinalan on 16/06/2017.

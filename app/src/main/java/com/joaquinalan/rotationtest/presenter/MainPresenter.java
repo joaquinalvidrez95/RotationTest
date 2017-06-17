@@ -1,7 +1,5 @@
 package com.joaquinalan.rotationtest.presenter;
 
-import android.content.Context;
-
 /**
  * Created by joaquinalan on 16/06/2017.
  */
@@ -12,7 +10,7 @@ public interface MainPresenter {
 
     void onResume();
 
-    Context getContext();
+    void onButtonStartClicked();
 
-    void onSensorChanged(float[] mOrientationAngles);
+    void onButtonStopClicked();
 }
