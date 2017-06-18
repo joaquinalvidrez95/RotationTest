@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
     @Override
     public void stopSensorService() {
         //stopService(new Intent(this, SteeringWheelSensorImpl.class));
+        mSteeringWheelSensor.stop();
     }
 
     @Override
