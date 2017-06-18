@@ -1,7 +1,5 @@
 package com.joaquinalan.rotationtest.view;
 
-import android.content.Context;
-
 /**
  * Created by joaquinalan on 15/06/2017.
  */

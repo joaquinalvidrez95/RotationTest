@@ -9,4 +9,6 @@ public interface ObservableSensor {
 
     void removeObserver(SensorObserver sensorObserver);
 
+    void notifyObservers();
+
 }

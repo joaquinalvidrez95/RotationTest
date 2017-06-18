@@ -1,8 +1,6 @@
 package com.joaquinalan.rotationtest.presenter;
 
-import com.joaquinalan.rotationtest.interactor.AngleSensorService;
 import com.joaquinalan.rotationtest.model.steeringwheel.CalculatorSteeringWheelState;
-import com.joaquinalan.rotationtest.model.steeringwheel.ObservableSensor;
 import com.joaquinalan.rotationtest.model.steeringwheel.Robot;
 import com.joaquinalan.rotationtest.model.steeringwheel.SensorObserver;
 import com.joaquinalan.rotationtest.view.MainView;
@@ -13,10 +11,10 @@ import com.joaquinalan.rotationtest.view.MainView;
 
 public class MainPresenterImpl implements MainPresenter, SensorObserver {
     private MainView mMainView;
-    private ObservableSensor mObservableSensor;
+    //private ObservableSensorImpl mObservableSensor;
 
     public MainPresenterImpl(MainView mainView) {
-        mObservableSensor = new AngleSensorService();
+      //  mObservableSensor = new ObservableSensorImpl();
         this.mMainView = mainView;
     }
 
@@ -27,12 +25,14 @@ public class MainPresenterImpl implements MainPresenter, SensorObserver {
     @Override
     public void onButtonStartClicked() {
         mMainView.startSensorService();
-        mObservableSensor.registerObserver(this);
+        //mObservableSensor.registerObserver(this);
+        //mObservableSensor.registerObserver(this);
     }
 
     @Override
     public void onButtonStopClicked() {
         mMainView.stopSensorService();
+        //mObservableSensor.removeObserver(this);
         //mObservableSensor.removeObserver(this);
     }
 
